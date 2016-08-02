@@ -3,4 +3,6 @@
     <string name="user_id">UserID</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="countryName">Country Name</string>
+    <string name="passcode">Passcode</string>
 </resources>
