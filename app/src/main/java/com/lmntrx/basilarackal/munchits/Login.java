@@ -3,6 +3,8 @@ package com.lmntrx.basilarackal.munchits;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -10,7 +12,8 @@ import java.util.ArrayList;
 
 public class Login extends AppCompatActivity {
 
-    EditText userIDEditText, userPasswordEditText;
+    EditText userPasswordEditText;
+    AutoCompleteTextView userIDEditText;
     Spinner spinner;
 
     @Override
@@ -18,9 +21,11 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        userIDEditText = (EditText) findViewById(R.id.userIDET);
+        userIDEditText = (AutoCompleteTextView) findViewById(R.id.userIDET);
         userPasswordEditText = (EditText) findViewById(R.id.passwordET);
 
+
+        //Spinner Code--
         spinner=(Spinner)findViewById(R.id.comboBoxSpinner);
         ArrayList<String>comboBoxArrayList=new ArrayList<>();
         comboBoxArrayList.add("ComboBox 1");
@@ -28,6 +33,8 @@ public class Login extends AppCompatActivity {
         comboBoxArrayList.add("ComboBox 3");
         comboBoxArrayList.add("ComboBox 4");
         comboBoxArrayList.add("ComboBox 5");
+
+        //Login hint
         comboBoxArrayList.add("ComboBox");
 
 
@@ -36,6 +43,19 @@ public class Login extends AppCompatActivity {
 
         spinner.setAdapter(adapter);
         spinner.setSelection(adapter.getCount());
+        //--Spinner Code
+
+        //AutoCompleteTextView Code--
+        ArrayList<String>countryNames=new ArrayList<String>();
+        countryNames.add("India");
+        countryNames.add("Indonesia");
+        countryNames.add("Iran");
+        countryNames.add("Iceland");
+        countryNames.add("Iraq");
+        ArrayAdapter countryAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,countryNames);
+        userIDEditText.setAdapter(countryAdapter);
+        userIDEditText.setThreshold(1);
+        //--AutoCompleteTextView Code
     }
 
     public void login(View view) {

@@ -33,13 +33,14 @@
             android:id="@+id/comboBoxSpinner"
             />
 
-        <EditText
+        <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/userIDET"
             android:hint="@string/countryName"
             android:layout_weight="1"
             android:inputType="textAutoComplete"
+            android:minLines="1"
             />
 
         <EditText
