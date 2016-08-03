@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
         //--Spinner Code
 
         //AutoCompleteTextView Code--
-        ArrayList<String>countryNames=new ArrayList<String>();
+        ArrayList<String>countryNames=new ArrayList<>();
         countryNames.add("India");
         countryNames.add("Indonesia");
         countryNames.add("Iran");
